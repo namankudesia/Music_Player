@@ -10,7 +10,7 @@ root =Tk()
 root.title('VRyThM')
 
 #icon
-photo=PhotoImage(file="C:/Users/prateek/Desktop/music player/icon.png")
+photo=PhotoImage(file="C:/Users/Naman/Desktop/music player/icon.png")
 root.iconphoto(False,photo)
 
 
@@ -30,7 +30,7 @@ def addsongs():
     temp_song=filedialog.askopenfilenames(initialdir="Music/",title="Choose a song", filetypes=(("mp3 Files","*.mp3"),("mp4 Files","*.mp4")))
     #loop through everyitem in the list
     for s in temp_song:
-        s=s.replace("C:/Users/prateek/Downloads/","")
+        s=s.replace("C:/Users/Naman/Downloads/","")
         songs_list.insert(END,s)
         
             
@@ -41,7 +41,7 @@ def deletesong():
     
 def Play():
     song=songs_list.get(ACTIVE)
-    song=f'C:/Users/prateek/Downloads/{song}'
+    song=f'C:/Users/Naman/Downloads/{song}'
     mixer.music.load(song)
     mixer.music.play()
 
@@ -67,7 +67,7 @@ def Previous():
     previous_one=previous_one[0]-1
     #to get the previous song
     temp2=songs_list.get(previous_one)
-    temp2=f'C:/Users/prateek/Downloads/{temp2}'
+    temp2=f'C:/Users/Naman/Downloads/{temp2}'
     mixer.music.load(temp2)
     mixer.music.play()
     songs_list.selection_clear(0,END)
@@ -83,7 +83,7 @@ def Next():
     next_one=next_one[0]+1
     #to get the next song 
     temp=songs_list.get(next_one)
-    temp=f'C:/Users/prateek/Downloads/{temp}'
+    temp=f'C:/Users/Naman/Downloads/{temp}'
     mixer.music.load(temp)
     mixer.music.play()
     songs_list.selection_clear(0,END)
